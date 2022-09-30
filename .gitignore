@@ -1,0 +1,8 @@
+.DS_Store
+.project
+target/
+.classpath
+.settings
+.cache-main
+.cache-tests
+tmp/
