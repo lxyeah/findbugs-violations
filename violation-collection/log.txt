@@ -1,0 +1,1 @@
+maven-dependency-plugin=>Fail with Cannot run program "./project-wise-tracking.sh": error=2, No such file or directory

@@ -9,9 +9,9 @@ import com.google.gson.JsonObject
 
 object VioDBFacade 
 {
-	var viodbURI = "bolt://172.29.4.55:7687"
+	var viodbURI = "bolt://localhost:7687"
 	var user = "neo4j"
-	var passwd = "112358"
+	var passwd = "123456"
 	var driver: Driver = _
 	var session: Session = _
 	

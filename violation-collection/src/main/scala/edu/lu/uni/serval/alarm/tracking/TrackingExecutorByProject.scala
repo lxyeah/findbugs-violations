@@ -6,6 +6,12 @@ import com.typesafe.scalalogging.LazyLogging
 
 object TrackingExecutorByProject extends LazyLogging
 {
+	/**
+	 * example
+	 * args(0):maven-dependency-plugin
+	 * args(1):/root/workings/workings-a/reports
+	 * args(2):/root/repos/repos-a/
+	 */
 	def main(args: Array[String]): Unit =
 	{
 		try{
@@ -20,7 +26,7 @@ object TrackingExecutorByProject extends LazyLogging
 			Runtime.getRuntime.exit(0)
 		}
 	}
-	
+
 	def internal(projectName: String, alarmRootPath: String, repoRootPath: String): Unit =
 	{
 		// guard

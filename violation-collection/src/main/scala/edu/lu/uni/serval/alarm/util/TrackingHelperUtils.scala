@@ -10,7 +10,7 @@ object TrackingHelperUtils
 {
 	def main(args: Array[String]): Unit =
 	{
-		mapProject2Pack("prj-pack.map", "/mnt/exp2/data/violation/working-%s/reports")
+		mapProject2Pack("prj-pack.map", "/root/exp/violation/repos/repos-%s")
 	}
 	
 	def mapProject2Pack(mapFilePath: String, pathTemplate: String) =
@@ -19,7 +19,7 @@ object TrackingHelperUtils
 		
 		val index = 'a'
 		
-		0 to 20 foreach { x => 
+		0 to 20 foreach { x =>
 			val indexChar = (index + x).toChar 
 			println(indexChar)
 			
@@ -27,7 +27,7 @@ object TrackingHelperUtils
 			
 			val prjList = reportRootDir.listFiles().filter(_.isDirectory())
 			prjList.foreach( x => FileUtils.write(mapFile, FilenameUtils.getBaseName(x.getCanonicalPath) + 
-			    ":repo-"+indexChar + "\n", "UTF-8", true) )
+			    ":repos-"+indexChar + "\n", "UTF-8", true) )
 		}
 	}
 	

@@ -2,6 +2,7 @@ package edu.lu.uni.serval.alarm.tracking
 
 import scala.annotation.tailrec
 import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.Set
 import scala.collection.JavaConverters._
 
@@ -238,11 +239,40 @@ object TrackingUtils extends LazyLogging
 					grandParents.foreach( g => ancestors ++= findParentCommit(g) )
 					 // else, there is no preceding commits analyzed.
 						//else /* TODO TESTING */ Console.println("!!!!!!!!!!! empty grand parents !!!!!!!!!!!!!!")
+					//如注释所说，grandParents永远都取到空值，需要对代码进行修改
 				}
 			}
 
 			return ancestors
   	}
+
+		//此方法为一种修改,若有其他修改办法请自行修改
+		def findParentCommitJustOneParent(parentCommit: RevCommit, flag: ArrayBuffer[Boolean]) : Set[AlarmsInCommit] =
+		{
+			val ancestors = Set[AlarmsInCommit]()
+			val pHash = parentCommit.getName
+			val parent = gitproxy.getCommitByHash(pHash)
+
+			if (!flag(0)) {
+				if(hashCommitMap.contains(pHash)) // if there is any commit analyzed, collect and stop traversing.
+				{
+					// collect
+					val parentCommit = hashCommitMap(pHash)
+					ancestors += parentCommit
+					flag(0) = !flag(0)
+				}
+				else // recursive
+				{
+					val grandParents = parentCommit.getParents
+					if( grandParents != null )
+					{
+						grandParents.foreach( g => ancestors ++= findParentCommitJustOneParent(g, flag) )
+					}
+				}
+			}
+
+			return ancestors
+		}
   	
   	def collectRelations(child: AlarmsInCommit, parentList: Set[AlarmsInCommit]): Unit =
   	{
@@ -274,10 +304,18 @@ object TrackingUtils extends LazyLogging
   		val parentCommits = commit.getParents
   		
   		val parentList = Set[AlarmsInCommit]()
-  		
+
+			var flag = new ArrayBuffer[Boolean]()
+			flag += false
+
   		//val parentList = findParentCommit(parentCommits.toList, List[AlarmsInCommit]())
-  		parentCommits.foreach( p => parentList ++= findParentCommit(p) )
-  		
+  		parentCommits.foreach( p => parentList ++= findParentCommitJustOneParent(p, flag) )
+  		if (parentList.size != 0) {
+				println("parent---------------" + parentList.head.commitHash)
+			}
+			else {
+				println("parent---------------null")
+			}
   		collectRelations(alarmsInCommit, parentList)
   	}
   	

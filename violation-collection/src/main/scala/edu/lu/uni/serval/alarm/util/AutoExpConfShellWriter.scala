@@ -10,10 +10,15 @@ import scala.sys.process._
  */
 object AutoExpConfShellWriter 
 {
+	/*
+	* args(0): /root/repos/repos-a
+	* args(1): /root/workings/workings-a
+	*/
   def main(args: Array[String]): Unit =
   {
   	if(args.length < 2)
   	{
+
   		Console.err.println("Usage: $java -cp \"$LIBS/*\" THIS.class$ [repoRootDir] [workingDir]")
   		return
   	}
@@ -24,14 +29,12 @@ object AutoExpConfShellWriter
   	val workingDir = new File(args(1))
   	val workingDirPath = workingDir.getCanonicalPath
   	
-  	val tmpDir = "/tmp/lxyeah/"
-  	val javaRT = "/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
-  	val libDir = "~/lxyeah/exp/violation/lib/"
-  	
-  	
-  	val confDir = new File(workingDir + "/conf")
+  	val tmpDir = "/tmp/exp/"
+  	val javaRT = "/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java"
+		val libDir = "/root/findbugs-violations/violation-collection/lib:/root/findbugs-violations/violation-collection/target/violation-collection-0.1-SNAPSHOT.jar"
+		val confDir = new File(workingDir + "/conf")
   	val shellDir = new File(workingDir + "/shell")
-  	
+
   	val confDirPath = confDir.getCanonicalPath
 		val shellDirPath = shellDir.getCanonicalPath
   	
@@ -84,7 +87,7 @@ object AutoExpConfShellWriter
 				shellStrings ++= s"mkdir -p $tmpDir/mvn\n"
 				
 				
-				shellStrings ++= "%s -cp \"%s/*\" ".format(javaRT, libDir)+
+				shellStrings ++= "%s -cp \"%s\" ".format(javaRT, libDir)+
 												"edu.lu.uni.serval.alarm.findbugs.exp.AlarmExpExecutor %s/%s.conf\n".
 														format(confDirPath, repoName)
 				
@@ -105,9 +108,9 @@ object AutoExpConfShellWriter
 				*/
 			}
 			
-			val chmod = "chmod 755 *.sh"
-			val exitCode = Process(chmod, shellDir).!
-			Console.err.println("chmod exitcode = " + exitCode)
+//			val chmod = "chmod 755 *.sh"
+//			val exitCode = Process(chmod, shellDir).!
+//			Console.err.println("chmod exitcode = " + exitCode)
 			
 			
 			//FileUtils.write(new File(shellDir, "job-submit.sh"), oarsubScript.toString)

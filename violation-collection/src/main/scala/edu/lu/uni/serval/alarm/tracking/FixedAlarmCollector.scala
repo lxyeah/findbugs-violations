@@ -14,18 +14,24 @@ object FixedAlarmCollector extends LazyLogging
 {
 	def main(args: Array[String]): Unit =
 	{
-		collectFixedAlarms("fixed-alarms.list", 
-				"/mnt/archive1/data/violations/repos/repos-%s/%s/.git",
-				"/home/darkrsw/repo/false-alarm-study/prj-pack.map",
-				"vtype-stat.csv",
-				"summary-project-vtype.csv"
-				)
-				
-	  /*attachFixerCommit(
-	      "/mnt/archive1/data/violations/repos/repos-%s/%s/.git",
-	      "/mnt/exp2/data/violation/working-%s/reports/%s",
-	      "/home/darkrsw/repo/false-alarm-study/prj-pack.map"
-      )*/
+		try{
+			collectFixedAlarms(args(0), args(1), args(2), args(3), args(4))
+		} catch
+		{
+			case e: Throwable => logger.error("Unknown Error", e)
+				Runtime.getRuntime.exit(127)
+		}
+		finally
+		{
+			Runtime.getRuntime.exit(0)
+		}
+//		collectFixedAlarms("fixed-alarms.list",
+//				"/root/repos/repos-%s/%s/.git",
+//				"/root/findbugs-violations/violation-collection/prj-pack.map",
+//				"vtype-stat.csv",
+//				"summary-project-vtype.csv"
+//				)
+
 	}
 	
 	def collectFixedAlarms(outputPath: String, 

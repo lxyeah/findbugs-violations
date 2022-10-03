@@ -1,0 +1,47 @@
+02:41:26.267 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+02:41:26.284 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+02:41:26.285 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+02:41:26.285 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+02:41:26.292 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+02:41:26.292 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+02:41:26.360 [main] ERROR edu.lu.uni.serval.scm.git.GitProxy:159 - Wrong repository location or incorrect options
+02:41:26.360 [main] ERROR edu.lu.uni.serval.scm.git.GitProxy:75 - Wrong repository location
+02:42:06.282 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+02:42:06.300 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+02:42:06.301 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+02:42:06.301 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+02:42:06.310 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+02:42:06.311 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+02:42:06.385 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
+02:57:30.466 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/
+02:57:30.582 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:82 - Finished pack: /root/lxyeah/exp/violation/workings/
+03:02:49.997 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a
+03:02:50.109 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:82 - Finished pack: /root/lxyeah/exp/violation/workings/workings-a
+03:03:26.274 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a
+03:04:33.679 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a
+03:05:30.705 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:05:59.976 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:07:24.046 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:08:51.476 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports/reports
+03:09:19.671 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports/reports
+03:16:43.198 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:16:43.318 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:58 - Starting tracking of maven-dependency-plugin...
+03:16:43.410 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:82 - Finished pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:18:18.182 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:18:58.781 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:58 - Starting tracking of maven-dependency-plugin...
+03:19:18.102 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:20 - Starting pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+03:19:18.225 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:58 - Starting tracking of maven-dependency-plugin...
+03:19:18.327 [main] INFO  e.l.u.s.a.t.TrackingExecutorByPack$:82 - Finished pack: /root/lxyeah/exp/violation/workings/workings-a/reports
+08:32:25.369 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, --version],/usr/bin
+08:32:25.387 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return 'git version 2.17.1'
+08:32:25.388 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+08:32:25.388 [main] DEBUG org.eclipse.jgit.util.FS:483 - readpipe [git, config, --system, --edit],/usr/bin
+08:32:25.394 [main] DEBUG org.eclipse.jgit.util.FS:500 - readpipe may return '/etc/gitconfig'
+08:32:25.394 [main] DEBUG org.eclipse.jgit.util.FS:501 - remaining output:
+
+08:32:25.476 [main] INFO  edu.lu.uni.serval.scm.git.GitProxy:68 - Repository connected: /root/lxyeah/exp/violation/repos/repos-a/maven-dependency-plugin/.git
